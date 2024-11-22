@@ -69,11 +69,11 @@ impl Iterator for WavetableOscillator {
 }
 
 fn main() {
-    let wave_table_size = 48;
+    let wave_table_size = 64;
     let mut wave_table: Vec<f32> = Vec::with_capacity(wave_table_size);
     let mut rng = rand::thread_rng();
-    let die = Uniform::from(100..700);
-    let freq = die.sample(&mut rng) as f32;
+    let rand = Uniform::from(80..500);
+    let freq = rand.sample(&mut rng) as f32;
 
 
     for n in 0..wave_table_size {
